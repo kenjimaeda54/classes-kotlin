@@ -1,32 +1,30 @@
 
-class People(var name: String){
-    fun greeting () {
-        println("Ola me chamo $name");
+class People(var name:String){
+    fun greeting(){
+        println("Ola $name ")
     }
 }
 
-class Car(var brand: String){
+class Car(var brand:String){
     //para chamar mais que uma classe preciso de um construtor
-    var year: Int? = null;
+    private var year: Int? = null
     constructor(brand:String,year:Int): this(brand){
         this.year = year
-    };
-
-    fun car() {
-        println("Meu carro e da marca $brand e o ano de fabricacao e $year");
+    }
+    fun detailsCar(){
+        println("Meu carro e da marca $brand e o ano e $year")
     }
 }
 
 
-fun main(){
+fun main() {
     //em Kotlin as classes precisam possuir mesma quantidade de parametros,minha classe People tem dois
     //parametros aqui preciso de dois tambem
-    val greetingPeople: People =  People(name =  "Ricardo");
+    val peopleGreeting: People = People(name="Rafel");
+      peopleGreeting.greeting();
     //em kotlin para instanciar uma classe com mais parametros precisa ser construido um construtor
     val brandCar: Car = Car(brand = "Ford")
-    val carCompet: Car = Car(brand="Ferrari", year = 2020)
-    brandCar.car()
-    carCompet.car()
-    greetingPeople.greeting()
-
+    val car: Car = Car(brand="Porshe", year = 2020)
+    brandCar.detailsCar();
+    car.detailsCar();
 }
