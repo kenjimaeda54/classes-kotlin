@@ -3,12 +3,8 @@ abstract  class Mammal(var idiom: String  ) {
     abstract  fun speak();
 }
 
-//tdoa classe abastrata que for usada pela outra classe,precisa usar os membros
-//dog precisa usar speak()
-//classes abastratas nao podem ser instanciadas diretamente
+
 class Dog(idiom: String, myWeight: Double): Mammal(idiom) {
-    //quando quero pegar a variavel de uma classe abstrata uso o init
-    //init vai ser inicializada indepentedente do construtor
     init {
         this.weigth = myWeight.toFloat();
     }

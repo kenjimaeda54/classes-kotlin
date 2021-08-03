@@ -4,9 +4,7 @@ open class Machines(private val brand: String) {
     }
 }
 
-//overRide e quando desejo editar uma funcao que estou herdando,para isto funcao que esta sendo
-//abstraida precisa estar open
-//overload e conceito quando utilizo mesmo nome de funcao,parametros parecidos,mas agrego ou altero os pametros
+
 
 class Computers(brand: String, private val value: Int) : Machines(brand) {
     override fun showBrand() {

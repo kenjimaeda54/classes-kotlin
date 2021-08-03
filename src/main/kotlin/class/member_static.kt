@@ -15,12 +15,7 @@ class Apartment private constructor(){
         }
     }
 }
-//diferenca mais notavel entre companion object e object.Object preciso necessariamente de um nome algo
-//que nao ocorre em companion object
-//membros e constates estaticas nao precisam ser instanciadas
-//colando a palavra reservada priavte constructor,garanto que nao sera possivel instanciar essa classe
-//toda escrita esta refaturado com convecao do Kotlin ou seja object e em maisculo
-//e as constantes estaticas vem ao lado o nome de constante
+
 
 fun main() {
     println(Apartment.room);
