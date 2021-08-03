@@ -3,14 +3,13 @@ Classes e construtores em Kotlin
 
 ### Heranca em Kotlin
 
-Para utilizar conceito de heranca em kotlin precisa colocar a palavra reservada open na frente da class que desejo abstrair
-Heranca e ideial quando desejo herdar tudo que tem em um classe para extender em outra
+Para utilizar conceito de herança em Kottlin precisa colocar a palavra reservada open na frente da classe que desejo abstrair
+Herança e ideal quando desejo herdarem tudo que tem em uma classe para estender em outra
 
 ### Overlaod e Override
-OverRide e quando desejo editar uma funcao que estou herdando,para isto funcao que esta sendo
-abstraida precisa estar com a palavra reservado open
-
-overload e conceito quando utilizo mesmo nome de funcao,parametros parecidos,mas agrego ou altero os pametros
+OverRide e quando desejo editar uma função que estou herdando, para isto função que esta sendo
+abstraida precisa estar com a palavra reservado open.
+Overload e conceito quando utilizo mesmo nome de função, parâmetros parecidos, mas agrego ou altero os parametros.
 
 ```Kotlin
 
@@ -30,12 +29,12 @@ fun overload(id: Int,old: Int) = println("Que id maneiro ")
 
 ## Constatne e Variveis Estaticas
 
-Para declarar uma variavel ou constante estatica utilizo companion object ou object
-Diferenca  notavel entre companion object e object. 
-Object preciso necessariamente de um nome  para decrever o membro estatico isto ja nao ocorre em companion object
-Membros e constates estaticas nao precisam ser instanciadas, para serem usados ou seja nesse casso especifico 
-posso colcoar Apertmente.Room.value
-Colando a palavra reservada private constructor,garanto que nao sera possivel instanciar essa classe,gerando assim mesna possibilidade de erro.
+Para declarar uma variável ou constante estática utilizo companion object ou object
+Diferença notável entre companion object e object.
+Object preciso necessariamente de um nome para descrever o membro estático isto já não ocorre em companion object
+Membros e constates estáticas não precisam ser instanciadas, para serem usados ou seja nesse casso especifico
+Posso colcoar Apertmente.Room.value.
+Colando a palavra reservada private constructor,garanto que não será possível instanciar essa classe, gerando assim mesma possibilidade de erro.
 
 ```kotlin
 class Apartment private constructor(){
@@ -59,11 +58,11 @@ class Apartment private constructor(){
 ```
 
 ## Classes abstratas e interfaces
-Classes abstratas eu herdo,interfaces eu implemento 
-CLasses abastratas e interfaces eu preciso implementar os membros da classe abstraida.
-Nao existe no java e Kotlin multi heranca,mas com interface posso realizar varias chamadas de interface
-Para chamar o valor de uma variavel na classe abstrata preciso usar o init,ele e chamado independente do construtor
-Interfaces podem ter corpos e para referenciar qual funcao estou referindo pode usar super<interface>.metodo
+Classes abstratas eu herdo, interfaces eu implemento 
+CLasses abstratas e interfaces eu preciso implementar os membros da classe abstraída.
+Não existe no java e Kotlin multi herança, mas com interface posso realizar varias chamada interfaces
+Para chamar o valor de uma variável na classe abstrata preciso usar o init, ele e chamado independente do construtor
+Interfaces podem ter corpos e para referenciar qual função estou referindo pode usar super<interface>.método
 
 
 ```kotlin
@@ -114,9 +113,9 @@ class Mymachines: Machines1,Machines2{
 ```
 
 ## Polimorfismo
-Polimorfismo e a capacidade de intidade assumir varios formas, exemplo e a interface Employe
-vantagem e que caso uma nova classe aparecer e implementar a interface ,nao precisara fazer
-novamente a implementacao,porque esta pronto
+Polimorfismo e a capacidade de entidade assumir vários formas, exemplo e a “interface” Employe
+vantagem e que caso uma nova classe aparecer e implementar a ‘interface’, não precisara fazer
+novamente a implementação, porque esta pronta
 
 
 ```kotlin
