@@ -27,7 +27,7 @@ fun overload(id: Int,name: String) = println("Que id maneiro ")
 fun overload(id: Int,old: Int) = println("Que id maneiro ")
 ```
 
-## Constatne e Variveis Estaticas
+## Constante e Variveis Estaticas
 
 Para declarar uma variável ou constante estática utilizo companion object ou object
 Diferença notável entre companion object e object.
