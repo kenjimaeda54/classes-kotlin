@@ -1,7 +1,7 @@
 package function_array
 
 fun main() {
-    val listNumber =  intArrayOf(12,35,65,8,34)
+    val listNumber = intArrayOf(12, 35, 65, 8, 34)
 
     val higherNumber = listNumber.maxOrNull()
     println("$higherNumber e o maior numero")
@@ -20,7 +20,7 @@ fun main() {
     println(findNUmber)
 
     //se todas condicoes forem verdadeiras retorna true
-    val haveNumber =  listNumber.all { it >= 10 }
+    val haveNumber = listNumber.all { it >= 10 }
     //vai retornar false porque temos numero menor que 10.
     println(haveNumber)
 
