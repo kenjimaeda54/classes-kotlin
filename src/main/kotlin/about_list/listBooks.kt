@@ -1,28 +1,11 @@
 package about_list
 
+import listBooks.listBook
+import printList.printList
 import repository.Books
 
 
 fun main() {
-    val book1 = Books(
-        author = "Joao",
-        name = "Terra Seca",
-        year = 1889,
-    )
-    val book2 = Books(
-        author = "Fernando",
-        name = "Terra Molhada",
-        year = 2014,
-        company = "Editora Veja"
-    )
-    val book3 = Books(
-        author = "Pedro",
-        name = "Seca",
-        year = 1560,
-        company = "Samaritano"
-    )
-    val listBook = mutableListOf<Books>(book1, book2, book3)
-    println(listBook)
     listBook.add(
         Books(
             author = "JSozinho",
@@ -33,18 +16,18 @@ fun main() {
     //recorda que estou em uma funcao para chamar preciso estar com funcao fora
     listBook.printList()
 
-    listBook.remove(book1)
+    listBook.removeAt(1)
     listBook.printList()
 
+    //ordenando por ano de publicação
+    //dentro dos criteriosos estabilizados pelo printList, vai imprimir pel ano de publicação
+    val sortedList =  listBook.sortedBy { it.year }
+    sortedList.printList()
 
+    //vamos filtrar a lista pela primeira letra inicial, ordenar e retornar so os nomes do livro
+    //Recorda que o filtro precisa de um parametro para verificar e filtrar algo, o nosso caso que comecem com a
+    //letra j
+    val name = listBook.filter {   it.author.startsWith("J") }.sortedBy { it.year}.map { it.name }
+    println(name)
 }
 
-fun MutableList<Books>.printList() {
-    //separador e o que vai acontecer a cada interacao na lista
-    val formattedList = this.joinToString(separator = "\n") {
-        "-- Autor: ${it.author},-- Nome do livro: ${it.name}"
-    }
-    println("#### Lista de livros ###\n $formattedList")
-
-
-}
