@@ -1,7 +1,7 @@
 package about_list
 
 import repository.Books
-import java.awt.print.Book
+
 
 fun main() {
     val book1 = Books(
@@ -19,19 +19,32 @@ fun main() {
         author = "Pedro",
         name = "Seca",
         year = 1560,
-        company = "Samarino"
+        company = "Samaritano"
     )
     val listBook = mutableListOf<Books>(book1, book2, book3)
     println(listBook)
     listBook.add(
         Books(
-            author = "JOaozinho",
-            name = "Pedrinho",
+            author = "JSozinho",
+            name = "Pederast's",
             year = 1304,
         )
     )
-    println(listBook)
+    //recorda que estou em uma funcao para chamar preciso estar com funcao fora
+    listBook.printList()
 
     listBook.remove(book1)
-    println(listBook)
+    listBook.printList()
+
+
+}
+
+fun MutableList<Books>.printList() {
+    //separador e o que vai acontecer a cada interacao na lista
+    val formattedList = this.joinToString(separator = "\n") {
+        "-- Autor: ${it.author},-- Nome do livro: ${it.name}"
+    }
+    println("#### Lista de livros ###\n $formattedList")
+
+
 }
