@@ -139,7 +139,7 @@ fun results(calculate: Employee) {
 
 ```
 
-### Array em Kotlin
+## Array em Kotlin
 
 - Kotlin da suporte aos metodos conhecidos do paradigma funcional Map,reduce,filter,forEach.
 - As particularidades estão no momento de usar o indices. No kotlin para utilizar o indicie usamos a palavra reservada
@@ -344,17 +344,18 @@ fun List<Books?>.printList() {
 
 ```
 
-### Set e Map
+## Set e Map
 
-Set e map sao colecoes do kotlin segue mesma hierarquia para list,array.Com set posso usar os operadores matemáticos
-para adicionar, subtrarir e ultimo operador e o intersection cada operador matemático existe o seu metodo especifico +(
-union), -(subtract) e temos o intersection. No caso do intersecction vai pegar os valores que nao estão nas duas listas.
-Set nao importa a ordem e também nao permite valores repetidos. Algo interessante com set e voce utilizar uma lista e
-depois transformar em set,assim elimino de forma facil os valores repetidos dessa lista Hierarquia de colecoes em kotlin
-nos permitem realizar varias transformacoes e abstrai o metodo de cada funcao</br>
-Se observar a foto abaixo o mutableList e a ultima abstracao dos coletions,ela herda todo comportamento das suas
-antecessoras e no caso e mutavel, quanto menor abstracao menor a posiblidade de recursos</br>
-Se printar returnSetCopy, reparara que Carlos foi retirado porque comportamento do set nao permite valroes repetidos
+Set e map são coleções do kotlin segue mesma hierarquia para list, array. Com set posso usar os operadores matemáticos
+para adicionar, subtrair e ultimo operador e o intersection cada operador matemático existe o seu método especifico +(
+union), -(subtract) e temos o intersection. No caso do intersecction vai pegar os valores que não estão nas duas listas.
+Set não importa a ordem e também não permite valores repetidos. Algo interessante com set e você utilizar uma lista e
+depois transformar em set, assim elimino de forma fácil os valores repetidos dessa lista Hierarquia de coleções em kotlin
+nos permitem realizar varias transformações e abstrai o método de cada função</br>
+Se observar a foto abaixo o mutableList e a última abstração da  coleção, ela herda todo comportamento das suas
+antecessoras e no caso e mutável, quanto menor abstração menor a possibilidade de recursos</br>
+Se printar returnSetCopy, reparara que Carlos foi retirado porque comportamento do set não permite valores repetidos
+
 
 ```kotlin
 
@@ -373,13 +374,13 @@ println(returnSetCopy)
 
 ```
 
-Map e o tipo de colecao que normalmente sera usada para resolver problemas no cotidiano, elas sao  par de chave e valor
-Comum em algumas linguagens como objetos. Por estar no fim da hierarquia herda todo o comportamento dos seus antecessores, ou seja, com ele e possivel usar map,fitler,reduce... Consigo acessar cada chave por colchetes, como também adicionar e retirar desta maneira.
-Map outro fator interessante que ele possui o filterKey, filterValue e tambem um fitler generic que tem o indicie e um inteiravael
-Com map e possivel utilizar outros metodos interestante como getDefault,getOrElse esses metods sao muito interesantes.
-Grande diferenca entre o getOrElse e o getDefault e que com o getOrElse se o map posuir valor nullo e desejamos utilizar esse valor. Com getOrElse nao e possivel, porque ele reconhece que este valor nao existe
-SetDefault tem comportamento diferente se o valor da chave for nullo,ele retorna nullo e se nao existir retorno o default
-Dentro desses temos o getValue, ele retorna expection se o valor nao existir.
+Map e o tipo de coleção que normalmente sera usada para resolver problemas no cotidiano, elas são  par de chave e valor
+Comum em algumas linguagens como objetos. Por estar no fim da hierarquia herda todo o comportamento dos seus antecessores, ou seja, com ele e possível usar map,  fitler, reduce... Consigo acessar cada chave por colchetes, como também adicionar e retirar desta maneira.
+Map outro fator interessante que ele possui o filterKey, filterValue e tambem um fitler genérico que tem o indicie e um inteirável
+Com map e possível utilizar outros métodos intersetante como getDefault, getOrElse esses metods sao muito interessantes.
+Grande diferença entre o getOrElse e o getDefault, com o getOrElse se o map possuir valor nullo e desejamos utilizar esse valor, não é possível, porque ele entende que não existe
+SetDefault tem comportamento diferente se o valor da chave for nullo, ele retorna nullo e se não existir retorno o padrão
+Dentro desses temos o getValue, ele retorna expection se o valor não existir.
 
 ```kotlin
 
@@ -425,13 +426,12 @@ println("Resultado do getDefault $defaultKey")
 
 ## Transformacoes
 
-Algo intersante no kotlin sao as transformacoes alguns desses metodos sao associateWith,associateBy,associate,groupBy
-Normalmente utilizamos para transformar uma colecao em algo que favoreca em nossos cassos de usso</br>
-Por exemplo com associateBy consigo adicionar um valor na frente de nossos map e depois utilizar esse valor a meu favor
-exemplo deletar de forma facil um Pair. Com apenas uma poucas linhas fiz minha associacao por id e deletei o Pair desejado pelo id
-ALgo a observar que o comportamento do map possui uma  unica chave ,entao se voce nao consegue possuir duas chaves identficas. Exemplo 2 chaves com valor true
-Desses metodos groupBy e bastante interesante,ele retorna um pair com chave e array,assim fica facil lidarmos com o map
-
+Algo insertante no kotlin são as transformações alguns desses métodos são associateWith,associateBy,associate,groupBy
+Normalmente utilizamos para transformar uma coleção em algo que favoreça em nossos cascos de uso</br>
+Por exemplo, com associateBy consigo adicionar um valor na frente de nossos map e depois utilizar esse valor a meu favor
+exemplo deletar de forma fácil um Pair. Com apenas uma poucas linhas fararão  associação por id e deletei o Pair desejado pelo id
+Algo a observar que o comportamento do map possui uma  única chave, então se você não consegue possuir duas chaves identificas. Exemplo 2 chaves com valor true
+Desses métodos groupBy e bastante interessante, ele retorna um pair com chave e array, assim fica fácil lidarmos com o map
 
 
 
