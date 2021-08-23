@@ -424,7 +424,7 @@ println("Resultado do getDefault $defaultKey")
 
 
 
-## Transformacoes
+## Transformações
 
 Algo insertante no kotlin são as transformações alguns desses métodos são associateWith,associateBy,associate,groupBy
 Normalmente utilizamos para transformar uma coleção em algo que favoreça em nossos cascos de uso</br>
