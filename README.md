@@ -213,7 +213,7 @@ fun main() {
 
 ```
 
-### Listas
+## Listas
 
 - Utilizei recurso interessante conhecido como dataClass. Parecido com o princípio de ‘interface’ do typescript, voce
   determina um modelo da sua lista. Depois implementa a sua lista, seguindo esse modelo.
