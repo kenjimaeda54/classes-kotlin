@@ -5,13 +5,12 @@ fun main() {
     val mapRequests = mutableMapOf(Pair(1, 32), Pair(5, 23), 3 to 20, 4 to 30, 5 to 100, 6 to null)
     val mapNumbers = mutableMapOf(Pair(1, 32), Pair(5, 23), 3 to 20, 4 to 30, 2 to 100, 6 to 100, 5 to 100, 11 to 89,23 to 100)
 
-    //mapOf possui possibilidade de usar map,filter... Algo que nao acontece em algumas linguagens quando lidam com chave e valor
 
     //Para trabalhar com valores nulos além do elvis e possível usar let. Vantagem do comportamento do let que ele e um escopo de funcao
     val mapKey = mapRequests[0].let { it ->
         "Endereço  $it"
     }
-    //vai retornar nada porque nao existe indicie em map
+    //vai retornar nada porque nao existe indicie no map
     println(mapKey)
     val mapKeyOK = mapRequests[1].let {
         "key $it"
@@ -51,8 +50,7 @@ fun main() {
     println("6--- $mapRequests")
 
     // se nao existir retorna o valor que colocamos
-    //valor da chave 6 e null,então vai retornar  no escopo da funcao  "Nao existe o valor", isto pode gerar duvida, ja que existe a chave 6
-    // so que o seu valor e null. Para contornar isso tem a opcao getValue, caso o valor nao exista da, um expectation
+
     val isHaveKey = mapRequests.getOrElse(6) {
 
         "Nao existe o valor"
@@ -76,7 +74,7 @@ fun main() {
     val allValue = mapRequests.values
     println("Todas values $allValue")
 
-    //metodos filter aqui tem algumas particularidades pode usar com filterKey,filterValue ou conjunto de values com key
+
 
     val mapFiltered = mapNumbers.filter { (key, value) ->
         key > 3 && value % 2 == 0

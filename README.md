@@ -343,3 +343,121 @@ fun List<Books?>.printList() {
 }
 
 ```
+
+### Set e Map
+
+Set e map sao colecoes do kotlin segue mesma hierarquia para list,array.Com set posso usar os operadores matemáticos
+para adicionar, subtrarir e ultimo operador e o intersection cada operador matemático existe o seu metodo especifico +(
+union), -(subtract) e temos o intersection. No caso do intersecction vai pegar os valores que nao estão nas duas listas.
+Set nao importa a ordem e também nao permite valores repetidos. Algo interessante com set e voce utilizar uma lista e
+depois transformar em set,assim elimino de forma facil os valores repetidos dessa lista Hierarquia de colecoes em kotlin
+nos permitem realizar varias transformacoes e abstrai o metodo de cada funcao</br>
+Se observar a foto abaixo o mutableList e a ultima abstracao dos coletions,ela herda todo comportamento das suas
+antecessoras e no caso e mutavel, quanto menor abstracao menor a posiblidade de recursos</br>
+Se printar returnSetCopy, reparara que Carlos foi retirado porque comportamento do set nao permite valroes repetidos
+
+```kotlin
+
+val newListMovie = watchMovieWithAura + watchWithoutWithAura
+val newListMovie2 = watchMovieWithAura union watchWithoutWithAura
+val newListMovie3 = watchMovieWithAura - watchWithoutWithAura
+val newListMovie4 = watchMovieWithAura subtract watchWithoutWithAura
+val newListMovie5 = watchMovieWithAura intersect watchWithoutWithAura
+val copyListMovie = watchMovieWithAura.toMutableList()
+copyListMovie.add("Carlos")
+
+val returnSetCopy = copyListMovie.toSet()
+println(returnSetCopy)
+
+
+
+```
+
+Map e o tipo de colecao que normalmente sera usada para resolver problemas no cotidiano, elas sao  par de chave e valor
+Comum em algumas linguagens como objetos. Por estar no fim da hierarquia herda todo o comportamento dos seus antecessores, ou seja, com ele e possivel usar map,fitler,reduce... Consigo acessar cada chave por colchetes, como também adicionar e retirar desta maneira.
+Map outro fator interessante que ele possui o filterKey, filterValue e tambem um fitler generic que tem o indicie e um inteiravael
+Com map e possivel utilizar outros metodos interestante como getDefault,getOrElse esses metods sao muito interesantes.
+Grande diferenca entre o getOrElse e o getDefault e que com o getOrElse se o map posuir valor nullo e desejamos utilizar esse valor. Com getOrElse nao e possivel, porque ele reconhece que este valor nao existe
+SetDefault tem comportamento diferente se o valor da chave for nullo,ele retorna nullo e se nao existir retorno o default
+Dentro desses temos o getValue, ele retorna expection se o valor nao existir.
+
+```kotlin
+
+//Para trabalhar com valores nulos além do elvis e possível usar let. Vantagem do comportamento do let que ele e um escopo de funcao
+val mapKey = mapRequests[0].let { it ->
+    "Endereço  $it"
+}
+
+mapNumbers -= 5
+println("Removi a chave o pair com a chave 5 $mapNumbers")
+mapNumbers += listOf(Pair(15, 50))
+
+
+val mapFiltered = mapNumbers.filter { (key, value) ->
+  key > 3 && value % 2 == 0
+}
+
+val mapKeyFiltered = mapNumbers.filterKeys {
+  it > 3
+}
+
+val mapValueFiltered = mapNumbers.filterValues {
+  it > 30
+}
+
+
+//valor da chave 6 e null,então vai retornar  no escopo da funcao  "Nao existe o valor", isto pode gerar duvida, ja que existe a chave 6
+// so que o seu valor e null. Para contornar isso tem a opcao getValue, caso o valor nao exista da, um expectation
+val isHaveKey = mapRequests.getOrElse(6) {
+
+  "Nao existe o valor"
+}
+val defaultKey = mapRequests.getOrDefault(15, 3)
+
+println("Resultado do getDefault $defaultKey")
+
+
+```
+
+![colections](https://kotlinlang.org/docs/images/collections-diagram.png)
+
+
+
+## Transformacoes
+
+Algo intersante no kotlin sao as transformacoes alguns desses metodos sao associateWith,associateBy,associate,groupBy
+Normalmente utilizamos para transformar uma colecao em algo que favoreca em nossos cassos de usso</br>
+Por exemplo com associateBy consigo adicionar um valor na frente de nossos map e depois utilizar esse valor a meu favor
+exemplo deletar de forma facil um Pair. Com apenas uma poucas linhas fiz minha associacao por id e deletei o Pair desejado pelo id
+ALgo a observar que o comportamento do map possui uma  unica chave ,entao se voce nao consegue possuir duas chaves identficas. Exemplo 2 chaves com valor true
+Desses metodos groupBy e bastante interesante,ele retorna um pair com chave e array,assim fica facil lidarmos com o map
+
+
+
+
+```kotlin
+  val behaviorMap = demands.associateBy {
+        it.id
+    }
+println(behavioMap)
+//{3=Demand(id=3, value=50), 9=Demand(id=9, value=100), 25=Demand(id=25, value=20), 45=Demand(id=45, value=12), 1=Demand(id=1, value=31)}
+val newBehavior = behaviorMap - 3
+//{9=Demand(id=9, value=100), 25=Demand(id=25, value=20), 45=Demand(id=45, value=12), 1=Demand(id=1, value=31)}
+
+
+val freeShipping = demands.groupBy {
+  it.value > 30
+}
+println(freeShipping)
+
+val value = freeShipping[true]
+//{true=[Demand(id=3, value=50), Demand(id=9, value=100), Demand(id=1, value=31)], false=[Demand(id=25, value=20), Demand(id=45, value=12)]}
+println("valores verdadeiros $value")
+val value = freeShipping[true]
+println("valores verdadeiros $value")
+//[Demand(id=3, value=50), Demand(id=9, value=100), Demand(id=1, value=31)]
+val names = listOf<String>("ANa","Ana Carla","Armando","Carla","Fernando","Joao","Beatriz")
+val diary = names.groupBy {
+  it.first()
+}
+```
