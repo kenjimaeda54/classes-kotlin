@@ -1,6 +1,6 @@
 # Kotlin primeiro passo
 
-Classes e construtores em Kotlin
+Alogarimtos, estrutura de dados em kotlin
 
 ### Heranca em Kotlin
 
