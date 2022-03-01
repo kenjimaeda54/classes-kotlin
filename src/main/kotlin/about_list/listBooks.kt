@@ -4,6 +4,8 @@ import listBooks.listBook
 import printList.printList
 import repository.Books
 
+//list em kotlin sao imutaveis e nao podem ser alterados
+//porem consigo ler eles
 
 fun main() {
     listBook.add(
@@ -28,6 +30,6 @@ fun main() {
     //Recorda que o filtro precisa de um parametro para verificar e filtrar algo, o nosso caso que comecem com a
     //letra j
     val name = listBook.filter {   it.author.startsWith("J") }.sortedBy { it.year}.map { it.name }
-    println(name)
+
 }
 
